@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace angular6_dotnet22_example.Models
+namespace Test2.Models
 {
     public class Product
     {

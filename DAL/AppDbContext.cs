@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using angular6_dotnet22_example.Models;
+using Test2.Models;
 using Microsoft.Extensions.Configuration;
 
-namespace angular6_dotnet22_example.DAL
+namespace Test2.DAL
 {
     public class AppDbContext : DbContext
     {
@@ -14,5 +14,6 @@ namespace angular6_dotnet22_example.DAL
         public DbSet<Option> Options { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Category> Categories {get;set;}
     }
 }

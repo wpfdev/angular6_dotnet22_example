@@ -1,7 +1,10 @@
+using System.Collections;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace angular6_dotnet22_example.Models
+namespace Test2.Models
 {
     [Table("Categories")]
     public class Category
@@ -10,5 +13,11 @@ namespace angular6_dotnet22_example.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+
+        public ICollection<Product> Products { get; set; }
+        public Category()
+        {
+            Products = new Collection<Product>();
+        }
     }
 }
