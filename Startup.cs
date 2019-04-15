@@ -15,6 +15,7 @@ namespace Test2
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            
         }
 
         public IConfiguration Configuration { get; }
@@ -22,9 +23,10 @@ namespace Test2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options => options.UseSqlServer("..."));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddDbContext<AppDbContext>(opt => 
+                        opt.UseSqlite(Configuration.GetConnectionString("SqliteDb")));
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -69,6 +71,7 @@ namespace Test2
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+            
         }
     }
 }

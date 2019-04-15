@@ -3,6 +3,8 @@ namespace angular6_dotnet22_example.Models
     public class Order
     {
         public int Id { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
         public int ProductId { get; set; }
         public int OptionId { get; set; }
         public Option Option { get; set; }
