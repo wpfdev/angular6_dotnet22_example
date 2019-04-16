@@ -18,7 +18,6 @@ namespace Test2
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            
         }
 
         public IConfiguration Configuration { get; }
@@ -28,7 +27,6 @@ namespace Test2
         {
             services.AddAutoMapper();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
             services.AddDbContext<AppDbContext>(opt => 
                         opt.UseSqlite(Configuration.GetConnectionString("SqliteDb")));
 
