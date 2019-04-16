@@ -30,8 +30,9 @@ namespace Test2
             services.AddDbContext<AppDbContext>(opt => 
                         opt.UseSqlite(Configuration.GetConnectionString("SqliteDb")));
 
-            //Adding Custom DataService as IDataService
+            //Adding Custom DataService as IDataService. Implemented in extension method
             services.AddDataService();
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

@@ -7,7 +7,7 @@ namespace Test2.DIExtensions
     {
          public static void AddDataService(this IServiceCollection services)
          {
-            services.AddTransient<DataService>();
+            services.AddTransient<IDataService, DataService>();
          }
     }
 }
