@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Test2.DAL;
 using AutoMapper;
+using Test2.Services;
+using Test2.DIExtensions;
 
 namespace Test2
 {
@@ -29,6 +31,9 @@ namespace Test2
 
             services.AddDbContext<AppDbContext>(opt => 
                         opt.UseSqlite(Configuration.GetConnectionString("SqliteDb")));
+
+            //Adding Custom DataService as IDataService
+            services.AddDataService();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

@@ -1,6 +1,6 @@
 using AutoMapper;
-using Test2.ViewModel;
-using Test2.Models;
+using Test2.DAL.Models;
+using Test2.DAL.DTO;
 
 namespace Test2.Mapping
 {
@@ -8,8 +8,8 @@ namespace Test2.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<Category, CategoryViewModel>();
-            CreateMap<Product, ProductViewModel>();
+            CreateMap<Category, CategoryDto>();
+            CreateMap<Product, ProductDto>();
         }
     }
 }

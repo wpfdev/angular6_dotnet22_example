@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Test2.Models
+namespace Test2.DAL.Models
 {
     [Table("Categories")]
     public class Category

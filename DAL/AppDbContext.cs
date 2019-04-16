@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Test2.Models;
+using Test2.DAL.Models;
 using Microsoft.Extensions.Configuration;
 
 namespace Test2.DAL

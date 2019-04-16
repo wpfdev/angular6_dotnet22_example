@@ -4,27 +4,23 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Test2.ViewModel;
-using Test2.Models;
-using Test2.DAL;
-using AutoMapper;
+using Test2.DAL.DTO;
+using Test2.Services;
 
 namespace Test2.Controllers
 {
     public class CategoriesController : Controller
     {
-        readonly AppDbContext context;
-        readonly IMapper mapper;
-        public CategoriesController(AppDbContext context, IMapper mapper)
+        readonly IDataService dataSvc;
+        
+        public CategoriesController(IDataService dataSvc)
         {
-            this.context = context;
-            this.mapper = mapper;
+            this.dataSvc = dataSvc;
         }
         [HttpGet("/api/categories")]
-        public async Task<IEnumerable<CategoryViewModel>> GetCategories()
+        public async Task<IEnumerable<CategoryDto>> GetCategories()
         {
-            var categories = await context.Categories.Include(c=> c.Products).ToListAsync();
-            return mapper.Map<List<Category>, List<CategoryViewModel>>(categories);
+          return await dataSvc.GetCategories();
         }
     }
 }
